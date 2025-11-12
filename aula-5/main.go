@@ -1,6 +1,9 @@
 package main;
 
-import "fmt";
+import (
+	"fmt"
+	"errors"
+)
 
 func main() {
 	// Tipos de dados no Go:
@@ -45,5 +48,33 @@ func main() {
 	// que é relativo aquele caractere na tabelas ASCII
 	caractereASCII := 'A';
 	fmt.Println("Caractere ASCII:", caractereASCII);
+
+	fmt.Println("--------- BOOLEAN ---------");
+	var casado bool = false;
+	fmt.Println("Casado:", casado);
+	var namorando bool = true;
+	fmt.Println("Solteiro:", namorando);
+
+	//No Go temos o tipo error muito usado nas funções
+	fmt.Println("--------- ERROR ---------");
+	
+	var erro error = errors.New("Erro interno");
+	fmt.Println("Erro:", erro);
+
+	fmt.Println("--------- VALOR ZERO ---------");
+	// Quando uma variável é declarada, mas não é inicializada o compilador dá um valor padrão de inicialização conforme o tipo:
+	var stringZero string;
+	var inteiroZero int8;
+	var inteiroPositivoZero uint16;
+	var floatZero float32;
+	var booleanZero bool;
+	var errorZero error;
+
+	fmt.Println("String zero:", stringZero);
+	fmt.Println("Inteiro zero:", inteiroZero);
+	fmt.Println("Inteiro positivo zero:", inteiroPositivoZero);
+	fmt.Println("Float zero:", floatZero);
+	fmt.Println("Boolean zero", booleanZero);
+	fmt.Println("Erro zero", errorZero);
 
 }
